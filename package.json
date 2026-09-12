@@ -1,0 +1,24 @@
+{
+  "name": "guzo",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "packages/*",
+    "server"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "tsc -p tsconfig.base.json --noEmit",
+    "db:generate": "npx prisma generate --schema=server/prisma/schema.prisma",
+    "db:push": "npx prisma db push --schema=server/prisma/schema.prisma",
+    "dev:passenger": "npm --prefix apps/passenger run start",
+    "dev:driver": "npm --prefix apps/driver run start",
+    "dev:admin": "npm --prefix apps/admin run dev",
+    "dev:server": "npm --prefix server run dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

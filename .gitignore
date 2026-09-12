@@ -1,0 +1,13 @@
+node_modules
+.env
+.env.*
+!.env.example
+.expo
+.expo-shared
+npm-debug.log*
+**/dist
+**/build
+coverage
+.DS_Store
+*.tsbuildinfo
+prisma/*.db
